@@ -6,7 +6,7 @@
  * Repository: https://github.com/basemax/YourCombinationsPHP
  */
 
-class Combinations {
+class YourCombinations {
 	private $elements = [];
 	
 	public function __construct($elements) {
