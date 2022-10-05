@@ -1,6 +1,6 @@
 # Your Combinations PHP
 
-An efficient combinatorics library for PHP 8 to generate and get the list of all Permutations and Combinations with the ability to enable or disable repetition. (utilizing generators)
+An efficient combinatorics library for PHP 8 to generate and get the list of all **Permutations** and **Combinations** with the ability to enable or disable repetition. (utilizing generators)
 
 ## Functions
 
@@ -15,8 +15,8 @@ An efficient combinatorics library for PHP 8 to generate and get the list of all
 ### PowerSet
 
 ```php
-$combinations = new YouCombinations([1, 2, 3]);
-[...$combinations->powerSet([1, 2, 3])]
+$your_combinations = new YourCombinations([1, 2, 3]);
+[...$your_combinations->powerSet([1, 2, 3])]
 
 // [
 //   [],       [ 1 ],
@@ -29,8 +29,8 @@ $combinations = new YouCombinations([1, 2, 3]);
 ### Permutation with repetition
 
 ```php
-$combinations = new YouCombinations([1, 2, 3]);
-$combinations->permutations(4, true);
+$your_combinations = new YourCombinations([1, 2, 3]);
+$your_combinations->Permutations(4, true);
 
 // [ 1, 1, 1, 1 ]
 // [ 1, 1, 1, 2 ]
@@ -118,8 +118,8 @@ $combinations->permutations(4, true);
 ### Permutation without repetition
 
 ```php
-$combinations = new YouCombinations([1, 2, 3]);
-$combinations->permutations(2, false);
+$your_combinations = new YourCombinations([1, 2, 3]);
+$your_combinations->Permutations(2, false);
 
 // [ 1, 2 ]
 // [ 1, 3 ]
@@ -132,8 +132,8 @@ $combinations->permutations(2, false);
 ### Combinations with repetition
 
 ```php
-$combinations = new YouCombinations([1, 2, 3]);
-$combinations->combinations(4, true);
+$your_combinations = new YourCombinations([1, 2, 3]);
+$your_combinations->Combinations(4, true);
 
 // [ 1, 1, 1, 1 ]
 // [ 1, 1, 1, 2 ]
@@ -155,8 +155,8 @@ $combinations->combinations(4, true);
 ### Combinations without repetition
 
 ```php
-$combinations = new YouCombinations([1, 2, 3]);
-$combinations->combinations(2, false);
+$your_combinations = new YourCombinations([1, 2, 3]);
+$your_combinations->Combinations(2, false);
 
 // [ 1, 2 ]
 // [ 1, 3 ]
