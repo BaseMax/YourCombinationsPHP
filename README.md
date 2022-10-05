@@ -15,7 +15,8 @@ An efficient combinatorics library for PHP 8 to generate and get the list of all
 ### PowerSet
 
 ```php
-[...combinations.powerSet([1, 2, 3])]
+$combinations = new YouCombinations([1, 2, 3]);
+[...$combinations->powerSet([1, 2, 3])]
 
 // [
 //   [],       [ 1 ],
