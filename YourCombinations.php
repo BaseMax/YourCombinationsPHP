@@ -15,7 +15,7 @@ class YourCombinations {
 		$this->count_elements = count($this->elements);
 	}
 	
-	public function powerSet() {
+	public function PowerSet() {
 		$powerSetCount = pow(2, $this->count_elements);
 		for ($i = 0; $i < $powerSetCount; $i++) {
 			$set = [];
