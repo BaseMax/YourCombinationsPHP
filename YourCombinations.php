@@ -19,13 +19,9 @@ class YourCombinations {
 		$powerSetCount = pow(2, $setsCount);
 		$powerSet = [];
 		for ($i = 0; $i < $powerSetCount; $i++) {
-			$set = [];
 			for ($j = 0; $j < $setsCount; $j++) {
-				if ($i & (1 << $j)) {
-					$set[] = $sets[$j];
-				}
+				if ($i & (1 << $j)) $powerSet[] = $sets[$j];
 			}
-			$powerSet[] = $set;
 		}
 		return $powerSet;
 	}
@@ -34,7 +30,7 @@ class YourCombinations {
 		$items_count = count($this->elements);
 		for ($i = $position; $i < $items_count; $i++) {
 			$elements[] = $this->elements[$i];
-				if (count($elements) == $length) yield $elements;
+			if (count($elements) == $length) yield $elements;
 			else foreach ($this->Combinations($length, $with_repetition, ($with_repetition == true ? $i : $i + 1), $elements) as $value2) yield $value2;
 			array_pop($elements);
 		}
