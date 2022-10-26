@@ -9,7 +9,7 @@
 class YourCombinations {
 	private $elements = [];
 	
-	public function __construct($elements) {
+	public function __construct(array $elements) {
 		$this->elements = array_values($elements);
 	}
 	
@@ -29,8 +29,8 @@ class YourCombinations {
 		}
 		return $powerSet;
 	}
-	
-	public function Combinations($length, $with_repetition = false, $position = 0, $elements = []) {
+
+	public function Combinations(int $length, bool $with_repetition = false, int $position = 0, array $elements = []) {
 		$items_count = count($this->elements);
 		for ($i = $position; $i < $items_count; $i++) {
 			$elements[] = $this->elements[$i];
@@ -40,7 +40,7 @@ class YourCombinations {
 		}
 	}
 
-	public function Permutations($length, $with_repetition = false, $elements = [], $keys = []) {
+	public function Permutations(int $length, bool $with_repetition = false, array $elements = [], array $keys = []) {
 		foreach($this->elements as $key => $value) {
 			if ($with_repetition == false) if (in_array($key, $keys)) continue;
 			$keys[] = $key;
