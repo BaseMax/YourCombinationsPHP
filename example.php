@@ -31,7 +31,7 @@ foreach ($combinations->combinations(2, false) as $item) {
 
 print("=====================");
 
-foreach ($combinations->powerSet($k) as $item) {
+foreach ($combinations->powerSet() as $item) {
 	print_r($item);
 }
-// print([...$combinations->powerSet($k)]);
+// print_r([...$combinations->powerSet()]);

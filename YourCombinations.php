@@ -7,28 +7,27 @@
  */
 
 class YourCombinations {
-	private $elements = [];
-	
+	private array $elements = [];
+	private int $count_elements = 0;
+
 	public function __construct(array $elements) {
 		$this->elements = array_values($elements);
+		$this->count_elements = count($this->elements);
 	}
 	
-	public function powerSet(array $sets) : array {
-		$sets = array_values($sets);
-		$setsCount = count($sets);
-		$powerSetCount = pow(2, $setsCount);
-		$powerSet = [];
+	public function powerSet() {
+		$powerSetCount = pow(2, $this->count_elements);
 		for ($i = 0; $i < $powerSetCount; $i++) {
-			for ($j = 0; $j < $setsCount; $j++) {
-				if ($i & (1 << $j)) $powerSet[] = $sets[$j];
+			$set = [];
+			for ($j = 0; $j < $this->count_elements; $j++) {
+				if ($i & (1 << $j)) $set[] = $this->elements[$j];
 			}
+			yield $set;
 		}
-		return $powerSet;
 	}
 
 	public function Combinations(int $length, bool $with_repetition = false, int $position = 0, array $elements = []) {
-		$items_count = count($this->elements);
-		for ($i = $position; $i < $items_count; $i++) {
+		for ($i = $position; $i < $this->count_elements; $i++) {
 			$elements[] = $this->elements[$i];
 			if (count($elements) == $length) yield $elements;
 			else foreach ($this->Combinations($length, $with_repetition, ($with_repetition == true ? $i : $i + 1), $elements) as $value2) yield $value2;
