@@ -34,4 +34,4 @@ print("=====================");
 foreach ($combinations->PowerSet() as $item) {
 	print_r($item);
 }
-// print_r([...$combinations->powerSet()]);
+// print_r([...$combinations->PowerSet()]);
