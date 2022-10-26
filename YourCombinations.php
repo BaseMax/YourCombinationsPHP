@@ -18,7 +18,7 @@ class YourCombinations {
 		for ($i = $position; $i < $items_count; $i++) {
 			$elements[] = $this->elements[$i];
 				if (count($elements) == $length) yield $elements;
-			else foreach ($this->x_calculateCombinations($length, $with_repetition, ($with_repetition == true ? $i : $i + 1), $elements) as $value2) yield $value2;
+			else foreach ($this->Combinations($length, $with_repetition, ($with_repetition == true ? $i : $i + 1), $elements) as $value2) yield $value2;
 			array_pop($elements);
 		}
 	}
@@ -29,7 +29,7 @@ class YourCombinations {
 			$keys[] = $key;
 			$elements[] = $value;
 			if (count($elements) == $length) yield $elements;
-			else foreach ($this->x_calculatePermutations($length, $with_repetition, $elements, $keys) as $value2) yield $value2;
+			else foreach ($this->Permutations($length, $with_repetition, $elements, $keys) as $value2) yield $value2;
 			array_pop($keys);
 			array_pop($elements);
 		}
