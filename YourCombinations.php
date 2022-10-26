@@ -13,6 +13,23 @@ class YourCombinations {
 		$this->elements = array_values($elements);
 	}
 	
+	public function powerSet(array $sets) : array {
+		$sets = array_values($sets);
+		$setsCount = count($sets);
+		$powerSetCount = pow(2, $setsCount);
+		$powerSet = [];
+		for ($i = 0; $i < $powerSetCount; $i++) {
+			$set = [];
+			for ($j = 0; $j < $setsCount; $j++) {
+				if ($i & (1 << $j)) {
+					$set[] = $sets[$j];
+				}
+			}
+			$powerSet[] = $set;
+		}
+		return $powerSet;
+	}
+	
 	public function Combinations($length, $with_repetition = false, $position = 0, $elements = []) {
 		$items_count = count($this->elements);
 		for ($i = $position; $i < $items_count; $i++) {
